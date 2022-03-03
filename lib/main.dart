@@ -1,7 +1,9 @@
 import 'package:contador/Pages/cambio_imagen_page2.dart';
+import 'package:contador/Pages/imagen_zoom_page.dart';
 import 'package:contador/controllers/cambio_imagen_controller.dart';
 import 'package:contador/controllers/cambio_imagen_controller2.dart';
 import 'package:contador/controllers/contador_controller.dart';
+import 'package:contador/controllers/imagen_zoom_controller.dart';
 import 'package:contador/controllers/menu2_controller.dart';
 import 'package:contador/pages/cambio_imagen_pages.dart';
 import 'package:contador/pages/card_page.dart';
@@ -21,6 +23,7 @@ void main() {
   Get.lazyPut(() => Menu2Controller());
   Get.lazyPut(() => CambioImagenController());
   Get.lazyPut(() => CambioImagenController2());
+  Get.lazyPut(() => ImagenZoomController());
   runApp(const MyApp());
   
 }
@@ -32,7 +35,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Grupo IDGS10-1',
-        initialRoute: '/cambio/imagen2',
+        initialRoute: '/imagen/zoom',
         routes: {
           '/menu': (context) => const MenuPage(),
           '/contador': (context) => ContadorPage(),
@@ -43,7 +46,8 @@ class MyApp extends StatelessWidget {
           '/examen1': (context) => const Examen1Pages(),
           '/menu2': (context) => const Menu2Pages(),
           '/cambio/imagen': (context) => const CambioImagenPages(),
-          '/cambio/imagen2': (context) => const CambioImagenPage2()
+          '/cambio/imagen2': (context) => const CambioImagenPage2(),
+          '/imagen/zoom': (context) => ImagenZoomPage()
         });
   }
 }
