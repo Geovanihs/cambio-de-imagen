@@ -17,7 +17,7 @@ class ImagenZoomPage extends StatelessWidget{
         child: Center(
           child: Obx(()=>
           CircleAvatar(
-          radius: imagenZoomController.escala.value,
+          radius: imagenZoomController.opacidad,
           backgroundImage: const NetworkImage(
             'https://i0.wp.com/noescinetodoloquereluce.com/wp-content/uploads/2014/04/puss-in-boots.jpg?resize=800%2C445&ssl=1'
           ),
@@ -40,7 +40,29 @@ class ImagenZoomPage extends StatelessWidget{
           child: const Icon(Icons.zoom_out),
           backgroundColor: Colors.yellow,
           onPressed: () => imagenZoomController.alejar(),
+        ),
+        FloatingActionButton(
+          splashColor: Colors.cyan,
+          tooltip: 'Aumentar',
+          child: const Icon(Icons.brightness_high),
+          backgroundColor: Colors.lightBlue,
+          onPressed: () => imagenZoomController.aumentar(),
+        ),
+        FloatingActionButton(
+          splashColor: Colors.cyan,
+          tooltip: 'Disminuir',
+          child: const Icon(Icons.brightness_low),
+          backgroundColor: Colors.lightBlue,
+          onPressed: () => imagenZoomController.disminuir(),
+        ),
+        FloatingActionButton(
+          splashColor: Colors.cyan,
+          tooltip: 'Restablecer',
+          child: const Icon(Icons.change_circle),
+          backgroundColor: Colors.lightBlue,
+          onPressed: () => imagenZoomController.restablecer(),
         )
+        
       ]
       )
     );
